@@ -14,7 +14,7 @@ import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
-import CameraIcon from '@mui/icons-material/PhotoCamera';
+// import CameraIcon from '@mui/icons-material/PhotoCamera';
 import AccountCircleRoundedIcon from '@mui/icons-material/AccountCircleRounded';
 
 

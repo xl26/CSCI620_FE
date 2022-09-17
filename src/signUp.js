@@ -52,7 +52,7 @@ export default function SignUp() {
           <Toolbar>
           <AccountCircleRoundedIcon sx={{ mr: 2 }} />
           <Typography variant="h6" color="inherit" noWrap>
-            Welcome to Sign up page. Test again.
+            Welcome to Sign up page.
           </Typography>
         </Toolbar>
         </AppBar>

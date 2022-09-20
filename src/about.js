@@ -33,10 +33,10 @@ export default function StickyFooter() {
           About page
         </Typography>
         <Typography variant="h5" component="h2" gutterBottom>
-          {'Pin a footer to the bottom of the viewport.'}
-          {'The footer will move as the main element of the page grows.'}
+          {"The main inventory page is a tabular view of all current items in the current users inventory.                          "}
+          {/* {'    ---------^-^---------'} */}
         </Typography>
-        <Typography variant="body1">Sticky footer placeholder.</Typography>
+        <Typography variant="body1">Work under progress</Typography>
       </Container>
       <Box
         component="footer"
@@ -52,7 +52,7 @@ export default function StickyFooter() {
       >
         <Container maxWidth="sm">
           <Typography variant="body1">
-            My sticky footer can be found here.
+            Stay tuned!.
           </Typography>
           <Copyright />
         </Container>

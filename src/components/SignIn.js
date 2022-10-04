@@ -12,7 +12,9 @@ import Grid from "@mui/material/Grid";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 import Typography from "@mui/material/Typography";
 import { Link as RouterLink } from "react-router-dom";
-import { useState } from "react";
+import { useState,useEffect } from "react";
+
+
 
 
 const darkTheme = createTheme({
@@ -30,7 +32,7 @@ function Copyright(props) {
       {...props}
     >
       {"Copyright © "}
-      <Link color="inherit" href="https://mui.com/">
+      <Link color="inherit" href="">
         Inventory
       </Link>{" "}
       {new Date().getFullYear()}
@@ -70,6 +72,9 @@ export default function SignInSide() {
   //     name === errorMessages.name && (
   //       <div className="error">{errorMessages.message}</div>
   //     );
+
+
+
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
@@ -167,15 +172,18 @@ export default function SignInSide() {
                 control={<Checkbox value="remember" color="primary" />}
                 label="Remember me"
               />
+               <RouterLink style={{textDecoration:'none'}} to="/inventory">
               <Button
                 type="submit"
                 disabled={!validateForm()}
                 fullWidth
                 variant="contained"
                 sx={{ mt: 3, mb: 2 }}
+                style={{color: 'white'}}
               >
-                <RouterLink style={{color: 'white'}} to="/inventory">Login</RouterLink>
+               Login
               </Button>
+              </RouterLink>
               <Grid container>
                 {/* <Grid item xs>
                   <Link href="#" variant="body2">

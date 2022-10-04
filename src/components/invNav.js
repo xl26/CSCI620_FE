@@ -7,12 +7,15 @@ import EditIcon from "@mui/icons-material/Edit";
 import DeleteIcon from "@mui/icons-material/DeleteOutlined";
 import SaveIcon from "@mui/icons-material/Save";
 import CancelIcon from "@mui/icons-material/Close";
+import { useEffect } from "react";
+import  axios  from "axios";
+
 import {
   GridRowModes,
-  DataGridPro,
+  DataGrid,
   GridToolbarContainer,
   GridActionsCellItem
-} from "@mui/x-data-grid-pro";
+} from "@mui/x-data-grid";
 import {
   randomCreatedDate,
   randomTraderName,
@@ -77,6 +80,13 @@ function EditToolbar(props) {
       [id]: { mode: GridRowModes.Edit, fieldToFocus: "name" }
     }));
   };
+
+  useEffect(() => {
+    axios.get("http://54.67.89.139:3001/getallInventory").then((response) => {
+      console.log(response);
+    });
+  }, []);
+
   
   
   return (
@@ -218,7 +228,7 @@ export default function FullFeaturedCrudGrid() {
         }
       }}
     >
-      <DataGridPro
+      <DataGrid
         rows={rows}
         columns={columns}
         editMode="row"

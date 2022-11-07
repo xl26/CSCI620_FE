@@ -1,17 +1,23 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
-// import { StyledEngineProvider } from '@mui/material/styles';
-import App from "./App";
-import Axios from 'axios'
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-// import SignInSide from "./components/SignIn";
-// import SignUp from "./components/signUp";
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { Switch, Redirect, Route } from 'react-router';
+import { BrowserRouter, Link } from 'react-router-dom';
 
-const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(
-  <Router>
-    <Routes>
-      <Route path="*" element={<App />} />
-    </Routes>
-  </Router>
+import Login from './Login';
+import Register from './Register';
+import Dashboard from './Dashboard';
+import About from './About';
+import './Login.css';
+
+ReactDOM.render(
+    <BrowserRouter>
+        <Switch>
+            <Route exact path='/' component={Login} />
+            <Route exact path='/register' component={Register} />
+            <Route path='/dashboard' component={Dashboard} />
+            <Route path='/about' component={About} />
+            {/* <Route component={NotFound}/> */}
+        </Switch>
+    </BrowserRouter>,
+    document.getElementById('root')
 );

@@ -322,7 +322,7 @@ export default class Dashboard extends Component {
             aria-labelledby="alert-dialog-title"
             aria-describedby="alert-dialog-description"
           >
-            <DialogTitle id="alert-dialog-title">Edit Product</DialogTitle>
+            <DialogTitle id="alert-dialog-title">Edit Inventory</DialogTitle>
             <DialogContent>
               <TextField
                 id="standard-basic"
@@ -387,7 +387,7 @@ export default class Dashboard extends Component {
                   accept="image/*"
                   name="file"
                   value={this.state.file}
-                  onChange={this.onChange}
+                  onChange={this.handlePicUpload}
                   placeholder="File"
                   hidden
                 />
@@ -402,7 +402,7 @@ export default class Dashboard extends Component {
               <Button
                 disabled={this.state.name == '' || this.state.desc == '' || this.state.ins_v == '' || this.state.approx_v == ''}
                 onClick={(e) => this.updateInventory()} color="primary" autoFocus>
-                Edit Product
+                Edit Inventory
               </Button>
             </DialogActions>
           </Dialog>

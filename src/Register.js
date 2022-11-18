@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import swal from 'sweetalert';
-import { Button, TextField, Link } from '@material-ui/core';
+import { Button, TextField, Link,Grid } from '@material-ui/core';
 const axios = require('axios');
 
 export default class Register extends React.Component {
@@ -42,81 +42,96 @@ export default class Register extends React.Component {
 
   render() {
     return (
-      <div style={{ marginTop: '200px' }}>
-        <div>
-          <h2>Register</h2>
-        </div>
-
-        <div>
-          <TextField
-            id="standard-basic"
-            type="text"
-            autoComplete="off"
-            name="fName"
-            value={this.state.fName}
-            onChange={this.onChange}
-            placeholder="First Name"
-            required
-          />
-          <br /><br />
-          <TextField
-            id="standard-basic"
-            type="text"
-            autoComplete="off"
-            name="lName"
-            value={this.state.lName}
-            onChange={this.onChange}
-            placeholder="Last Name"
-            required
-          />
-          <br /><br />
-          <TextField
-            id="standard-basic"
-            type="text"
-            autoComplete="off"
-            name="email"
-            value={this.state.email}
-            onChange={this.onChange}
-            placeholder="Email"
-            required
-          />
-          <br /><br />
-          <TextField
-            id="standard-basic"
-            type="password"
-            autoComplete="off"
-            name="password"
-            value={this.state.password}
-            onChange={this.onChange}
-            placeholder="Password"
-            required
-          />
-          <br /><br />
-          <TextField
-            id="standard-basic"
-            type="password"
-            autoComplete="off"
-            name="confirm_password"
-            value={this.state.confirm_password}
-            onChange={this.onChange}
-            placeholder="Confirm Password"
-            required
-          />
-          <br /><br />
-          <Button
-            className="button_style"
-            variant="contained"
-            color="primary"
-            size="small"
-            disabled={this.state.username == '' && this.state.password == ''}
-            onClick={this.register}
-          >
-            Register
-          </Button> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-          <Link href="/">
-            Login
-          </Link>
-        </div>
+      <div>
+        <Grid container style={{ minHeight: '100vh' }}>
+          <Grid item xs={12} sm={6}>
+            <img src="https://i0.wp.com/www.n41.com/wp-content/uploads/2022/04/N41_Web-Blog_APRIL-04-1.jpg)"
+              style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+              alt="project name"
+            />
+          </Grid>
+          <Grid container
+            item xs={12}
+            sm={6}
+            alignItems="center"
+            direction='column'
+            justify='space-between'
+            style={{ padding: '10' }}>
+            <div />
+            <div style={{ display: 'flex', flexDirection: "column", justifyContent: "space-between", maxWidth: 400, minWidth: 300 }}>
+              <h1>Register</h1>
+              <TextField
+                
+                type="text"
+                autoComplete="off"
+                name="fName"
+                value={this.state.fName}
+                onChange={this.onChange}
+                placeholder="First Name"
+                required
+              />
+              <br /><br />
+              <TextField
+                
+                type="text"
+                autoComplete="off"
+                name="lName"
+                value={this.state.lName}
+                onChange={this.onChange}
+                placeholder="Last Name"
+                required
+              />
+              <br /><br />
+              <TextField
+                
+                type="text"
+                autoComplete="off"
+                name="email"
+                value={this.state.email}
+                onChange={this.onChange}
+                placeholder="Email"
+                required
+              />
+              <br /><br />
+              <TextField
+                
+                type="password"
+                autoComplete="off"
+                name="password"
+                value={this.state.password}
+                onChange={this.onChange}
+                placeholder="Password"
+                required
+              />
+              <br /><br />
+              <TextField
+                
+                type="password"
+                autoComplete="off"
+                name="confirm_password"
+                value={this.state.confirm_password}
+                onChange={this.onChange}
+                placeholder="Confirm Password"
+                required
+              />
+              <Button
+                className="button_style"
+                variant="contained"
+                color="primary"
+                size="small"
+                style={{marginTop: '10px'}}
+                disabled={this.state.username == '' && this.state.password == ''}
+                onClick={this.register}
+              >
+                Register
+              </Button> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              <Link href="/">
+                Login
+              </Link>
+            </div>
+            <div />
+          </Grid>
+        </Grid>
       </div>
     );
   }

@@ -1,6 +1,10 @@
 import React, { Component } from 'react';
 import swal from 'sweetalert';
 import { Button, TextField, Link,Grid } from '@material-ui/core';
+import { makeStyles } from '@material-ui/core/styles';
+import InputLabel from '@material-ui/core/InputLabel';
+import FormControl from '@material-ui/core/FormControl';
+import Select from '@material-ui/core/Select';
 const axios = require('axios');
 
 export default class Register extends React.Component {
@@ -10,10 +14,12 @@ export default class Register extends React.Component {
       fName: '',
       lName: '',
       email: '',
+      role: '',
       password: '',
       confirm_password: ''
     };
   }
+  
 
   onChange = (e) => this.setState({ [e.target.name]: e.target.value });
 
@@ -92,7 +98,25 @@ export default class Register extends React.Component {
                 placeholder="Email"
                 required
               />
-              <br /><br />
+              <br /><br /><br /><br />
+              <FormControl style={{marginTop: '10px'}} variant="outlined">
+                <InputLabel htmlFor="outlined-age-native-simple">Role</InputLabel>
+                <Select
+                  native
+                  value={this.state.role}
+                  onChange={this.onChange}
+                  label="Age"
+                  name="role"
+                  inputProps={{
+                    name: 'role',
+                    id: 'outlined-age-native-simple',
+                  }}
+                >
+                  <option aria-label="None" value="" />
+                  <option value={'user'}>User</option>
+                  <option value={'admin'}>Admin</option>
+                </Select>
+              </FormControl>
               <TextField
                 
                 type="password"

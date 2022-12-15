@@ -25,11 +25,12 @@ export default class Register extends React.Component {
 
   register = () => {
 
-    axios.post('http://54.241.142.245/api/register', {
+    axios.post('/api/register', {
       F_name: this.state.fName,
       L_name: this.state.lName,
       email: this.state.email,
-      password: this.state.password
+      password: this.state.password,
+      role: this.state.role
     }).then((res) => {
       swal({
         text: res.data.title,
